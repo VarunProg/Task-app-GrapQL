@@ -21,8 +21,8 @@ export function useTypedMutation<
   mutation: TData | ValueTypes[O],
   options?: Omit<UseMutationOptions<TResult>, "mutationKey" | "mutationFn">,
   zeusOptions?: OperationOptions,
-  host = "",
-  hostOptions: chainOptions[1] = {}
+  host = API_URL,
+  hostOptions: chainOptions[1] = fetchOptions
 ) {
   return useMutation<TResult>(
     mutationKey,

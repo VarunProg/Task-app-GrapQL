@@ -1,7 +1,9 @@
 import { SpinnerInfinity } from "spinners-react";
-import { useTypedQuery } from "./zeus/reactQuery";
+import { useTypedMutation, useTypedQuery } from "../zeus/reactQuery";
 
 const Home = () => {
+  const { mutate } = useTypedMutation("createTask", {});
+  // mutate();
   const { data, isLoading, error } = useTypedQuery(
     "allTask",
     {
