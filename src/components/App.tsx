@@ -9,7 +9,6 @@ const App = () => {
     <QueryClientProvider client={queryClient}>
       <div className="container">
         <Home />
-        <Form />
       </div>
     </QueryClientProvider>
   );

@@ -12,6 +12,7 @@ import { useMutation, useQuery } from "react-query";
 import type { UseMutationOptions, UseQueryOptions } from "react-query";
 import { API_URL, fetchOptions } from "../config";
 
+// post and put req kind of
 export function useTypedMutation<
   O extends "Mutation",
   TData extends ValueTypes[O],
@@ -34,6 +35,7 @@ export function useTypedMutation<
     options
   );
 }
+// GET REQUEST kind of
 export function useTypedQuery<
   O extends "Query",
   TData extends ValueTypes[O],
@@ -43,7 +45,7 @@ export function useTypedQuery<
   query: TData | ValueTypes[O],
   options?: Omit<UseQueryOptions<TResult>, "queryKey" | "queryFn">,
   zeusOptions?: OperationOptions,
-  // NOTE: Update the config accordingly
+  // TODO: Update the config accordingly
   host = API_URL,
   hostOptions: chainOptions[1] = fetchOptions
 ) {
